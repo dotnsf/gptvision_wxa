@@ -1,0 +1,79 @@
+swagger: '2.0'
+info:
+  description: DeepL API ドキュメント
+  version: 0.0.1
+  title: DeepL REST APIs
+#host: localhost:8080
+basePath: /api
+tags:
+  - name: translate
+    description: Translate APIs
+schemes:
+  - http
+  - https
+paths:
+  /translate:
+    post:
+      tags:
+        - translate
+      summary: 翻訳
+      description: 翻訳
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/TranslateRequest'
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+  /pre_wxa:
+    post:
+      tags:
+        - translate
+      summary: 翻訳
+      description: 翻訳
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/PreRequest'
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+definitions:
+  TranslateRequest:
+    type: object
+    properties:
+      text:
+        type: string
+        description: 翻訳対象テキスト
+        required: true
+      target_lang:
+        type: string
+        description: 翻訳後の言語( 'EN', 'JA', .. )
+        required: true
+      source_lang:
+        type: string
+        description: 翻訳前の言語( 'EN', 'JA', .. デフォルトは自動検知 )
+  PreRequest:
+    type: object
+    properties:
+      text:
+        type: string
+        description: 翻訳対象テキスト
+        required: true
+      target_lang:
+        type: string
+        description: 翻訳後の言語( 'EN', 'JA', .. )
+        required: true
+      source_lang:
+        type: string
+        description: 翻訳前の言語( 'EN', 'JA', .. デフォルトは自動検知 )

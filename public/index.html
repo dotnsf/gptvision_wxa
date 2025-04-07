@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<title>GPT Vision</title>
+<meta charset="utf8"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+<link href="//use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+</style>
+<script>
+</script>
+</head>
+<body>
+
+<div class="container-fluid send-area">
+  <h1>GPT Vision</h1>
+  <form name="uploadform" enctype="multipart/form-data" action="/api/gptvision-buffer" method="POST">
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-8 input-group mb-3">
+        <input id="prompt" name="prompt" type="text" class="form-control" value="何が映っていますか？" placeholder="入力プロンプト"/><br/>
+        <input id="image" name="image" type="file" class="form-control"/>
+      </div>
+      <div class="col-2">
+        <input type="submit" class="btn btn-primary"/>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
