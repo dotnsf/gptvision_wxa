@@ -90,7 +90,7 @@ app.post( '/api/gptvision-base64', async function( req, res ){
           {
             type: 'image_url',
             image_url: {
-              url: base64
+              url: 'data:image/png;base64,' + base64
             }
           }
         ]
